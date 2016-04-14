@@ -1,0 +1,31 @@
+{
+  "name": "node-revel",
+  "version": "1.0.0",
+  "description": "Helper class to make your life easier when dealing with the Revel Payments API.",
+  "main": "index.js",
+  "dependencies": {
+    "node-rest-client": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabacus/node-revel.git"
+  },
+  "keywords": [
+    "revel",
+    "api",
+    "npm",
+    "revelsystems",
+    "revel",
+    "systems",
+    "revelapi",
+    "revel",
+    "payments"
+  ],
+  "author": "Kristo Mikkonen",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/mikkonek/"
+}
