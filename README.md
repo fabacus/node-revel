@@ -12,6 +12,8 @@ Currently supports:
 
 ## Example: 
 
+``` javascript
+
 var NodeRevel = require('node-revel');
 
 var endpoint = 'https://xxxxxxxx.revelup.com';
@@ -54,6 +56,7 @@ nodeRevel.updateCustomer(customer, '5')
     console.log(err);
   });
 
+```
 
 Any feedback is appreciated.
 
