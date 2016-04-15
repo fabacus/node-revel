@@ -21,7 +21,8 @@ var enterpriseUserUri = '/enterprise/User/1/';
 
 nodeRevel = new NodeRevel(endpoint, apiKey, apiSecret, enterpriseUserUri);
 
-// set parameters
+
+// get customers where email =  bob@bobson.com 
 var parameters = {
   format: "json",
   email__iexact: "bob@bobson.com"
@@ -35,6 +36,23 @@ nodeRevel.getAllCustomers(parameters)
   });
 
 
+// update customer email,first_name,last_name where revel id = 5
+
+var customer = {
+  email:"user@email.com",
+  first_name: "joe",
+  last_name: "bloggs"
+}
+
+nodeRevel.updateCustomer(customer, '5')
+  .then((result) => {
+
+    console.log(result);
+
+  }).catch((err) => {
+
+    console.log(err);
+  });
 
 
 Any feedback is appreciated.
