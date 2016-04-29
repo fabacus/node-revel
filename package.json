@@ -23,7 +23,9 @@
     "systems",
     "revelapi",
     "revel",
-    "payments"
+    "payments",
+    "noderevel",
+    "revelnode"
   ],
   "author": "Kristo Mikkonen",
   "license": "MIT",

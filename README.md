@@ -1,38 +1,47 @@
+## Installation
+``` javascript
+ npm install node-revel --save
+```
+
 ## Overview
 
 - Handles Authentication
 - Allows Creating, Updating, Getting of all Revel objects
-- Supports Promises
+- Returns Promises
 
 The node-revel package is an easy way to deal with the revel API when using node. Every resource url is mapped to a function. This allows you to interact with your Revel objects by using four methods for each resource URL (get, insert, update, getAll). 
 
-For each revel URL all you have to do is replace the resource name you want to interact with in the function: 
-
-``` javascript
-var NodeRevel = require('node-revel');
-
-nodeRevel.get[Resource](id);
-
-nodeRevel.update[Resource](resourceObject);
-
-nodeRevel.insert[Resource](resourceObject, id);
-
-nodeRevel.getAll[Resource]s(parameters); // parameters are optional, returns a complete list of all orders if no parameters are specified.
-```
+For each revel URL all you have to do is replace the 'Resource' name you want to interact with within the function:
 
 Here is an example where the resource url is '/resources/Order/': 
 
 ``` javascript
 var NodeRevel = require('node-revel');
 
-nodeRevel.getOrder(id);
+nodeRevel.getOrder(id)
+  .then((result) => {
+    console.log(result);
+  })
 
-nodeRevel.insertOrder(orderObject);
+nodeRevel.insertOrder(orderObject)
+  .then((result) => {
+    console.log(result);
+  })
 
-nodeRevel.updateOrder(orderObject, id);
+nodeRevel.updateOrder(orderObject, id)
+  .then((result) => {
+    console.log(result);
 
-nodeRevel.getAllOrders(parameters); // parameters are optional, returns a complete list of all orders if no parameters are specified.
+  })
+  // parameters are optional, returns a complete list of all orders if no parameters are specified.
+nodeRevel.getAllOrders(parameters)
+  .then((result) => {
+    console.log(result);
+  })
+
 ```
+If you want to interact with a different object, for example products with a resource URL of: "/resources/Product/" the function would be ``` getProduct() ``` or if you want to access an order item at "/resources/OrderItem/" the function would be ``` getOrderItem()```. 
+
 
 
 A full list of all the functions can be found at the bottom of this readme. 
@@ -69,7 +78,6 @@ nodeRevel.getAllCustomers(parameters)
   });
 
 
-
 // get Customer where id = 5
 nodeRevel.getCustomer(5)
   .then((result) => {
@@ -79,12 +87,11 @@ nodeRevel.getCustomer(5)
   });
 
 
-
 // insert customer example
 var customer = {
   email:"patrick.mckinley@fabacus.com",
-  first_name: "joe",
-  last_name: "bloggs"
+  first_name: "Patrick",
+  last_name: "Mckinley"
 }
 
 nodeRevel.insertCustomer(customer)
@@ -93,7 +100,6 @@ nodeRevel.insertCustomer(customer)
   }).catch((err) => {
     console.log(err);
   });
-
 
 
 // update customer email,first_name,last_name where revel id = 5
@@ -109,7 +115,6 @@ nodeRevel.updateCustomer(customer, '5')
   }).catch((err) => {
     console.log(err);
   });
-
 
 ```
 
