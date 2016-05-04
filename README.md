@@ -18,6 +18,8 @@ Here is an example where the resource url is '/resources/Order/':
 ``` javascript
 var NodeRevel = require('node-revel');
 
+nodeRevel = new NodeRevel(endpoint, apiKey, apiSecret, enterpriseUserUri);
+
 nodeRevel.getOrder(id)
   .then((result) => {
     console.log(result);
