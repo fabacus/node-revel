@@ -9,7 +9,7 @@ const expect = chai.expect;
 
 // chai.use(chaiAsPromised);
 
-describe('Testing the constructer of the Revel Class', () => {
+describe('Testing the constructor of the Revel Class', () => {
 
   var endpoint = 'https://xxxxxxx.revelup.com';
   var apiKey = 'XXXXXXXXXXXXXXXXXX';
@@ -20,7 +20,7 @@ describe('Testing the constructer of the Revel Class', () => {
   it('Should be an instance of NodeRevel', () => {
 
     const nodeRevel = new NodeRevel(endpoint, apiKey, apiSecret, enterpriseUserUri);
-    expect(nodeRevel).to.be.a.instanceof(NodeRevel);
+    expect(nodeRevel).to.be.an.instanceof(NodeRevel);
 
   });
 
